@@ -5,3 +5,32 @@
 .formulario.active {
     display: block;
 }
+
+.botonMas {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 70px;
+}
+
+.borrar {
+
+    bottom: 40px;
+    right: 140px;
+    font-size: 50px;
+}
+
+.botonGeneral {
+    position: fixed;
+    z-index: 1;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    justify-content: center;
+    background-color: lightseagreen;
+    color: white;
+    border-radius: 50%;
+    border-color: lightseagreen;
+    padding: 0px;
+    margin: 0px;
+}
