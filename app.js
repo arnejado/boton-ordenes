@@ -1,25 +1,40 @@
 console.log("script inicializado")
 
 const listaBotones = document.querySelector(".listaBotones");
-const anadir = document.querySelector(".anadir");
+const botonMas = document.querySelector(".botonMas");
 const borrar = document.querySelector(".borrar");
+const formulario = document.querySelector(".formulario");
 
-anadir.addEventListener("click", anadir);
-borrar.addEventListener("click", borrar)
+console.log(formulario);
+
+botonMas.addEventListener("click", mostrarAgregar);
+borrar.addEventListener("click", borrarBoton)
+formulario.addEventListener('submit', agregarBoton);
+
+comprobarLocalStorage()
+
 
 function comprobarLocalStorage () {
     console.log("comprobando...");
-}
+};
 
 function cargandoBotones () {
     console.log("cargando...");
 }
 
-function anadir () {
-    console.log("añadiendo...");
+function mostrarAgregar () {
+    console.log("mostrando agregar...");
+    formulario.classList.toggle("active");
+    console.log(formulario);
 }
 
-function borrar () {
+function borrarBoton () {
     console.log("borrando...")
 }
+
+function agregarBoton() {
+    console.log("agregando boton")
+}
+
+
 

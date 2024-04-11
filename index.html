@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordenes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     Una aplicación web para crear botones y que los reproduzca!
     <div class="listaBotones">
         lista de botones
     </div>
-    <button class="anadir">+</button>
+    <form action="" class="formulario">
+        <label for="Nuevo Boton"></label>
+        <textarea class="nuevoBoton">nuevoBoton</textarea>
+        <input type="submit" class="confirmarBoton" value="Agregar">
+    </form>
+    <button class="botonMas">+</button>
     <button class="borrar">🗑️</button>
     <script src ="app.js"></script>
 </body>
