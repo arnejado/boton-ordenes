@@ -7,6 +7,7 @@ let botones = [];
 
 
 console.log(formulario);
+console.log(botones);
 
 botonMas.addEventListener("click", mostrarAgregar);
 borrar.addEventListener("click", borrarBoton)
@@ -25,8 +26,9 @@ function agregarBoton(e) {
 
     //donde el usuario escribe
     console.log("agregando boton")
-    const botonNuevo = document.querySelector('#botonNuevo').value;
+    const botonNuevo = document.querySelector('.nuevoBoton').value;
 
+    console.log (botonNuevo);
     // validacion del botón
 /*
     if (botonNuevo === "") {
@@ -53,7 +55,7 @@ function agregarBoton(e) {
     console.log(botones);
 }
 
-
+/*
 
 //Mostrar error
 
@@ -73,7 +75,8 @@ function mostrarError (error) {
     },    3000);
     }
 
-    
+*/
+
 function mostrarAgregar () {
     console.log("mostrando agregar...");
     formulario.classList.toggle("active");
@@ -84,10 +87,5 @@ function mostrarAgregar () {
 function borrarBoton () {
     console.log("borrando...")
 }
-
-function agregarBoton() {
-    console.log("agregando boton")
-}
-
 
 
