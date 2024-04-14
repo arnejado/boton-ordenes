@@ -4,8 +4,6 @@ const borrar = document.querySelector(".borrar");
 const formulario = document.querySelector(".formulario");
 let botones = [];
 
-
-
 console.log(formulario);
 console.log(botones);
 
@@ -15,12 +13,19 @@ formulario.addEventListener('submit', agregarBoton);
 
 comprobarLocalStorage()
 
+// Funciones
 
 function comprobarLocalStorage () {
     console.log("comprobando...");
 };
 
-// Funciones
+function mostrarAgregar () {
+    console.log("mostrando agregar...");
+    formulario.classList.toggle("active");
+    listaBotones.classList.toggle("active");
+    console.log(formulario);
+}
+
 function agregarBoton(e) {
     e.preventDefault();
 
@@ -77,12 +82,6 @@ function mostrarError (error) {
 
 */
 
-function mostrarAgregar () {
-    console.log("mostrando agregar...");
-    formulario.classList.toggle("active");
-    listaBotones.classList.toggle("active");
-    console.log(formulario);
-}
 
 function borrarBoton () {
     console.log("borrando...")

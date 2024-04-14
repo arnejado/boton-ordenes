@@ -6,6 +6,12 @@ body {
     align-content: center;
 }
 
+.cuerpo {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
 .listaBotones {
     display: block;
     display: flex;
