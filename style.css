@@ -12,6 +12,7 @@
 
 .formulario.active {
     display: block;
+    flex-direction: column;
 }
 
 textarea{
