@@ -33,17 +33,25 @@ label {
 
 .formulario.active {
     display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
 }
 
 .confirmarBoton {
     background-color: lightseagreen;
-    border-radius: 5px;
+    border-radius: 15px;
     color: white;
     font-weight: bold;
+    max-width: 200px;
+    height: 40px;
+    border: none;
+    margin-top: 10px;
 }
 
 textarea{
     font-size: 25px;
+    height: 100px;
+    margin-top: 10px;
 }
 
 .botonMas {
@@ -69,7 +77,9 @@ textarea{
     background-color: lightseagreen;
     color: white;
     border-radius: 50%;
-    border-color: lightseagreen;
+    border: none;
+    font-weight: 600;
+    line-height: 38px;
     padding: 0px;
     margin: 0px;
 }
