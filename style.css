@@ -1,3 +1,8 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+}
+
 .listaBotones {
     display: block;
     display: flex;
@@ -8,6 +13,10 @@
     display: none;
 }
 
+label {
+    font-style: oblique;
+}
+
 .cuerpo {
     display: flex;
     flex-direction: column;
@@ -16,7 +25,14 @@
 .formulario {
     display: none;
     display: flex;
+    max-width: 400px;
     flex-direction: column;
+}
+
+.confirmarBoton {
+    background-color: lightseagreen;
+    color: white;
+    font-style: oblique;
 }
 
 .formulario.active {
@@ -25,7 +41,6 @@
 
 textarea{
     font-size: 25px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .botonMas {
