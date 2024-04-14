@@ -13,7 +13,6 @@ body {
 }
 
 .listaBotones {
-    display: block;
     display: flex;
     flex-direction: column;
 }
@@ -26,12 +25,14 @@ label {
     font-style: oblique;
 }
 
-
 .formulario {
     display: none;
-    display: flex;
-    max-width: 700px;
     flex-direction: column;
+    max-width: 700px;
+}
+
+.formulario.active {
+    display: flex;
 }
 
 input.confirmarBoton {
@@ -39,10 +40,6 @@ input.confirmarBoton {
     border-radius: 5px;
     color: white;
     font-weight: bold;
-}
-
-.formulario.active {
-    display: block;
 }
 
 textarea{
@@ -57,7 +54,6 @@ textarea{
 }
 
 .borrar {
-
     bottom: 40px;
     right: 140px;
     font-size: 50px;
