@@ -1,18 +1,26 @@
 .listaBotones {
     display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .listaBotones.active {
     display: none;
 }
 
+.cuerpo {
+    display: flex;
+    flex-direction: column;
+}
+
 .formulario {
     display: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .formulario.active {
     display: block;
-    flex-direction: column;
 }
 
 textarea{
