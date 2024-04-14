@@ -1,5 +1,6 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
     justify-content: center;
 }
 
@@ -31,8 +32,9 @@ label {
 
 .confirmarBoton {
     background-color: lightseagreen;
+    border-radius: 5px;
     color: white;
-    font-style: oblique;
+    font-weight: bold;
 }
 
 .formulario.active {
