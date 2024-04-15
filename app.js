@@ -17,14 +17,6 @@ formulario.addEventListener('submit', agregarBoton);
 
 // Funciones
 
-
-function mostrarAgregar () {
-    formulario.classList.toggle("active");
-    listaBotones.classList.toggle("active");
-    console.log(formulario);
-}
-
-
 function agregarBoton(e) {
     e.preventDefault();
 
@@ -75,7 +67,17 @@ function crearHTML () {
                 borrarBoton(boton.id); 
             }
 
-            console.log(btnEliminar)
+            // Agregar un botón de editar
+            const btnEditar = document.createElement('a');
+            btnEditar.classList.add("botonEditarX");
+            btnEditar.innerText = "📝";
+            
+            //Añadimos la función de editar
+            btnEditar.onclick = () => {
+                editarBoton(boton.id)
+            }
+
+
             //crear HTML
             const li = document.createElement('p');
             const botonli = document.createElement('button');
@@ -93,7 +95,8 @@ function crearHTML () {
 
             //Asignar el botón de eliminar
             li.appendChild(btnEliminar);
-            
+            //Asignar el botón editar
+            li.appendChild(btnEditar);            
             //Asignar el boton que reproduce
             li.appendChild(botonli);
             
@@ -140,8 +143,14 @@ function limpiarHTML() {
 }
 
 
-function borrarBoton () {
+function borrarBoton (idBoton) {
+    botones = botones.filter (boton => boton.id !== idBoton);
+    crearHTML();
+}
 
+function editarBoton(idBoton) {
+    console.log("editando...");
+    console.log(idBoton)
 }
 
 function reproduce(fraseReproducir) {
@@ -154,7 +163,12 @@ function reproduce(fraseReproducir) {
 
 }
 
+function mostrarAgregar () {
+    formulario.classList.toggle("active");
+    listaBotones.classList.toggle("active");
+    console.log(formulario);
+}
+
 function mostrarBorrar () {
     console.log("mostrando borrar....");
-    btnEliminar.classList.toggle("active");
 }

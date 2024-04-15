@@ -38,12 +38,13 @@ label {
     margin: 25px 25px;
 }
 
+
 .borrarBotonX {
-    display: none;
+    color: red;
+    font-size: 20px;
 }
 
-.borrarBotonX.active {
-    color: red;
+.editarBotonX {
     font-size: 20px;
 }
 
@@ -75,7 +76,13 @@ textarea{
 .borrar {
     bottom: 40px;
     right: 140px;
-    font-size: 50px;
+    font-size: 45px;
+}
+
+.editar {
+    bottom: 40px;
+    right: 240px;
+    font-size: 45px;
 }
 
 .botonGeneral {
@@ -97,7 +104,7 @@ textarea{
 
 .botonListado {
     width: 350px;
-    height: 30px;
+    height: auto;
     font-size: 20px;
     border-radius: 15px;
 }
