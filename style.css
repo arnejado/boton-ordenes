@@ -15,6 +15,7 @@ body {
 .listaBotones {
     display: flex;
     flex-direction: column;
+    margin: 25px;
 }
 
 .listaBotones.active {
@@ -34,8 +35,18 @@ label {
 .formulario.active {
     display: flex;
     justify-content: flex-end;
-    margin-top: 25px;
+    margin: 25px 25px;
 }
+
+.borrarBotonX {
+    display: none;
+}
+
+.borrarBotonX.active {
+    color: red;
+    font-size: 20px;
+}
+
 
 .confirmarBoton {
     background-color: lightseagreen;
@@ -83,3 +94,11 @@ textarea{
     padding: 0px;
     margin: 0px;
 }
+
+.botonListado {
+    width: 350px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+

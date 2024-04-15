@@ -12,18 +12,18 @@ document.addEventListener('DOMContentLoaded', ()=> {
 })
 
 botonMas.addEventListener("click", mostrarAgregar);
-borrar.addEventListener("click", borrarBoton)
+borrar.addEventListener("click", mostrarBorrar);
 formulario.addEventListener('submit', agregarBoton);
 
 // Funciones
 
 
 function mostrarAgregar () {
-    console.log("mostrando agregar...");
     formulario.classList.toggle("active");
     listaBotones.classList.toggle("active");
     console.log(formulario);
 }
+
 
 function agregarBoton(e) {
     e.preventDefault();
@@ -67,7 +67,7 @@ function crearHTML () {
             // Agregar un botón de eliminar
 
             const btnEliminar = document.createElement('a');
-            btnEliminar.classList.add('borrar-boton');
+            btnEliminar.classList.add('borrarBotonX');
             btnEliminar.innerText = "X";
             
             //Añadir la función de eliminar
@@ -79,6 +79,7 @@ function crearHTML () {
             //crear HTML
             const li = document.createElement('p');
             const botonli = document.createElement('button');
+            botonli.classList.add("botonListado");
 
             //Añadimos función al botón que reproduce
             botonli.onclick = () => {
@@ -90,12 +91,12 @@ function crearHTML () {
             //añadir el texto
             botonli.innerText = boton.boton;
 
+            //Asignar el botón de eliminar
+            li.appendChild(btnEliminar);
             
             //Asignar el boton que reproduce
             li.appendChild(botonli);
             
-            //Asignar el botón de eliminar
-            li.appendChild(btnEliminar);
 
             //insertarlo en el html
             listaBotones.appendChild(li);
@@ -140,7 +141,7 @@ function limpiarHTML() {
 
 
 function borrarBoton () {
-    console.log("borrando...")
+
 }
 
 function reproduce(fraseReproducir) {
@@ -151,4 +152,9 @@ function reproduce(fraseReproducir) {
 
         window.speechSynthesis.speak(utterance); //reproduce
 
+}
+
+function mostrarBorrar () {
+    console.log("mostrando borrar....");
+    btnEliminar.classList.toggle("active");
 }
