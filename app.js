@@ -95,10 +95,10 @@ function crearHTML () {
 
             //Asignar el botón de eliminar
             li.appendChild(btnEliminar);
-            //Asignar el botón editar
-            li.appendChild(btnEditar);            
             //Asignar el boton que reproduce
             li.appendChild(botonli);
+            //Asignar el botón editar
+            li.appendChild(btnEditar);            
             
 
             //insertarlo en el html

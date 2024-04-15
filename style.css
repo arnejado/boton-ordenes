@@ -7,9 +7,8 @@ body {
 }
 
 .cuerpo {
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .listaBotones {
@@ -103,9 +102,13 @@ textarea{
 }
 
 .botonListado {
-    width: 350px;
+    width: 250px;
     height: auto;
     font-size: 20px;
     border-radius: 15px;
+    margin: 0px 10px;
 }
 
+p {
+    margin-top: 10;
+}
