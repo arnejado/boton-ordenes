@@ -42,9 +42,10 @@ function agregarBoton(e) {
     botones = [...botones, botonObj];
 
     //Una vez agregado vamos a cear el HTML
-    console.log(botones);
     formulario.classList.toggle("active");
     listaBotones.classList.toggle("active");
+    vamosEditar = false;
+    vamosBorrar = false;
     crearHTML ()
 
     //reiniciar el formulario
@@ -54,7 +55,6 @@ function agregarBoton(e) {
 // llena la lista de botones
 
 function crearHTML () {
-    console.log(botones);
 
     limpiarHTML();
 
@@ -105,8 +105,6 @@ function crearHTML () {
                 reproduce(boton.boton);
             }
 
-
-            console.log(boton.boton);
             //añadir el texto
             botonli.innerText = boton.boton;
 
@@ -163,9 +161,21 @@ function borrarBoton (idBoton) {
     crearHTML();
 }
 
-function editarBoton(idBoton) {
+function editarBoton(idboton) {
     console.log("editando...");
-    console.log(idBoton)
+    const botonEncontrado = botones.filter((objeto) => {
+        return objeto.id === idboton;
+      });
+      
+      console.log(botonEncontrado);
+      console.log(botonEncontrado.boton);
+
+
+      formulario.classList.toggle("active");
+      listaBotones.classList.toggle("active");
+      const botonNuevo = document.querySelector('.nuevoBoton').value;
+      console.log(botonNuevo);
+      botonNuevo.innerText = botonEncontrado.boton;
 }
 
 function reproduce(fraseReproducir) {
@@ -182,6 +192,7 @@ function mostrarAgregar () {
     formulario.classList.toggle("active");
     listaBotones.classList.toggle("active");
     console.log(formulario);
+
 }
 
 function mostrarBorrar () {
