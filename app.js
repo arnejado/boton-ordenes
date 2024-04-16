@@ -1,8 +1,11 @@
 const listaBotones = document.querySelector(".listaBotones");
 const botonMas = document.querySelector(".botonMas");
 const borrar = document.querySelector(".borrar");
+const editar = document.querySelector(".editar");
 const formulario = document.querySelector(".formulario");
 let botones = [];
+let vamosEditar = false;
+let vamosBorrar = false;
 
 console.log(listaBotones);
 
@@ -14,6 +17,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 botonMas.addEventListener("click", mostrarAgregar);
 borrar.addEventListener("click", mostrarBorrar);
 formulario.addEventListener('submit', agregarBoton);
+editar.addEventListener("click", mostarEditar);
 
 // Funciones
 
@@ -56,32 +60,45 @@ function crearHTML () {
 
     if (botones.length >0) {
         botones.forEach (boton => {
-            // Agregar un botón de eliminar
-
-            const btnEliminar = document.createElement('a');
-            btnEliminar.classList.add('borrarBotonX');
-            btnEliminar.innerText = "X";
-            
-            //Añadir la función de eliminar
-            btnEliminar.onclick = () => {
-                borrarBoton(boton.id); 
-            }
-
-            // Agregar un botón de editar
-            const btnEditar = document.createElement('a');
-            btnEditar.classList.add("botonEditarX");
-            btnEditar.innerText = "📝";
-            
-            //Añadimos la función de editar
-            btnEditar.onclick = () => {
-                editarBoton(boton.id)
-            }
-
-
+      
             //crear HTML
             const li = document.createElement('p');
             const botonli = document.createElement('button');
             botonli.classList.add("botonListado");
+
+            //comprobamos si vamos a borrar
+            if (vamosBorrar === true) {
+            
+                // Agregar un botón de eliminar
+
+                const btnEliminar = document.createElement('a');
+                btnEliminar.classList.add('borrarBotonX');
+                btnEliminar.innerText = "X";
+                
+                //Añadir la función de eliminar
+                btnEliminar.onclick = () => {
+                    borrarBoton(boton.id); 
+                }
+
+                //Asignar el botón de eliminar
+                li.appendChild(btnEliminar);
+            }
+
+            //comprobamos si vamos a editar
+            if (vamosEditar === true){
+
+                // Agregar un botón de editar
+                const btnEditar = document.createElement('a');
+                btnEditar.classList.add("botonEditarX");
+                btnEditar.innerText = "📝";
+
+                //Añadimos la función de editar
+                btnEditar.onclick = () => {
+                editarBoton(boton.id)
+                }
+
+                li.appendChild(btnEditar);            
+            }
 
             //Añadimos función al botón que reproduce
             botonli.onclick = () => {
@@ -93,12 +110,10 @@ function crearHTML () {
             //añadir el texto
             botonli.innerText = boton.boton;
 
-            //Asignar el botón de eliminar
-            li.appendChild(btnEliminar);
+
             //Asignar el boton que reproduce
             li.appendChild(botonli);
             //Asignar el botón editar
-            li.appendChild(btnEditar);            
             
 
             //insertarlo en el html
@@ -170,5 +185,13 @@ function mostrarAgregar () {
 }
 
 function mostrarBorrar () {
-    console.log("mostrando borrar....");
+    vamosEditar = false;
+    vamosBorrar = !vamosBorrar;
+    crearHTML ();
+}
+
+function mostarEditar () {
+    vamosBorrar = false;
+    vamosEditar = !vamosEditar;
+    crearHTML ();
 }

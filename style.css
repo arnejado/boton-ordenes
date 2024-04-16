@@ -9,13 +9,15 @@ body {
 .cuerpo {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
 .listaBotones {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 25px;
-    margin-bottom: 40px;
 }
 
 .listaBotones.active {
@@ -110,6 +112,3 @@ textarea{
     margin: 0px 10px;
 }
 
-p {
-    margin-top: 10;
-}
