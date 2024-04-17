@@ -2,13 +2,11 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    width: 95vw;
 }
 
 .cuerpo {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     
 }
@@ -16,8 +14,7 @@ body {
 .listaBotones {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 25px;
+    margin-left: 25px;
 }
 
 .listaBotones.active {
@@ -68,23 +65,50 @@ textarea{
     margin-top: 10px;
 }
 
+.expandir {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 60px;
+    z-index: 5;
+}
+
 .botonMas {
     position: fixed;
     bottom: 40px;
     right: 40px;
     font-size: 70px;
+    z-index: 4;
 }
 
 .borrar {
     bottom: 40px;
-    right: 140px;
+    right: 40px;
     font-size: 45px;
+    z-index: 3;
 }
 
 .editar {
     bottom: 40px;
-    right: 240px;
+    right: 40px;
     font-size: 45px;
+    z-index: 2;
+}
+
+.expandir.active {
+    transform: rotate(90);
+}
+
+.botonMas.active {
+    transform: translatex(-100px);
+}
+
+.borrar.active {
+    transform: translatex(-200px);
+}
+
+.editar.active {
+    transform: translatex(-300px);
 }
 
 .botonGeneral {
@@ -102,6 +126,7 @@ textarea{
     line-height: 38px;
     padding: 0px;
     margin: 0px;
+    transition: transform 0.3s,
 }
 
 .botonListado {

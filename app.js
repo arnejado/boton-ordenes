@@ -2,6 +2,7 @@ const listaBotones = document.querySelector(".listaBotones");
 const botonMas = document.querySelector(".botonMas");
 const borrar = document.querySelector(".borrar");
 const editar = document.querySelector(".editar");
+const expandir = document.querySelector(".expandir");
 const formulario = document.querySelector(".formulario");
 let botones = [];
 let vamosEditar = false;
@@ -18,6 +19,7 @@ botonMas.addEventListener("click", mostrarAgregar);
 borrar.addEventListener("click", mostrarBorrar);
 formulario.addEventListener('submit', agregarBoton);
 editar.addEventListener("click", mostarEditar);
+expandir.addEventListener("click", mostrarBotones);
 
 // Funciones
 
@@ -186,6 +188,13 @@ function reproduce(fraseReproducir) {
 
         window.speechSynthesis.speak(utterance); //reproduce
 
+}
+
+function mostrarBotones () {
+    botonMas.classList.toggle("active");
+    borrar.classList.toggle("active");
+    editar.classList.toggle("active");
+    expandir.classList.toggle("active");
 }
 
 function mostrarAgregar () {
