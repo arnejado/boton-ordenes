@@ -1,13 +1,13 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     width: 95vw;
 }
 
 .cuerpo {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     
 }
 
