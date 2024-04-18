@@ -182,7 +182,7 @@ function editarBoton(idboton) {
 
 function reproduce(fraseReproducir) {
     const utterance = new SpeechSynthesisUtterance(fraseReproducir);
-        utterance.voice = speechSynthesis.getVoices()[2]; // Elige una voz (puedes obtener la lista de voces disponibles)
+        utterance.voice = speechSynthesis.getVoices()[1]; // Elige una voz (puedes obtener la lista de voces disponibles)
         utterance.rate = 1.0; // Velocidad normal
         utterance.pitch = 1.0; // Tono normal
 

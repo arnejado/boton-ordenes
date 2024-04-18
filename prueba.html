@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+    <style>
+        .cuerpo, .zonaBoton {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .cuerpo {
+            background-color: lightgray;
+        }
+
+        .boton {
+            height: 50px;
+            width: 50px;
+        }
+
+        .boton img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .botonAgregar.active {
+            transform: translatex(100px);
+            transition: transform 0.4s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cuerpo">
+        <div class="boton botonAgregar">
+            <img src="/icons/agregar.png">
+        </div>
+        <div class="boton botonEditar">
+            <img src="/icons/editar.png">
+        </div>
+        <div class="boton botonBorrar">
+            <img src="/icons/borrar.png">
+        </div>
+    </div>
+    <div class="zonaBoton">
+        <button class="accionar">
+            acción!
+        </button>
+    </div>
+
+    <script>
+        const botonAccion = document.querySelector(".accionar");
+        const botonAgregar = document.querySelector(".botonAgregar");
+
+        botonAccion.addEventListener("click", accion);
+
+        function accion () {
+            botonAgregar.classList.toggle("active");
+
+        }
+    </script>
+</body>
+</html>
