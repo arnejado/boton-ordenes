@@ -195,6 +195,14 @@ function mostrarBotones () {
     borrar.classList.toggle("active");
     editar.classList.toggle("active");
     expandir.classList.toggle("active");
+
+    if (!expandir.classList.contains('active')) {
+        vamosEditar = false;
+        vamosBorrar = false;
+        crearHTML();
+    }
+
+
 }
 
 function mostrarAgregar () {
