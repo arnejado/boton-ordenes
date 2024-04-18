@@ -48,16 +48,7 @@ label {
 }
 
 
-.confirmarBoton {
-    background-color: lightseagreen;
-    border-radius: 15px;
-    color: white;
-    font-weight: bold;
-    max-width: 200px;
-    height: 40px;
-    border: none;
-    margin-top: 10px;
-}
+
 
 textarea{
     font-size: 25px;
@@ -193,3 +184,9 @@ textarea{
     box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
     transform: translate3d(0, 0, -1em);
   }
+
+
+  .confirmarBoton, .cancelar {
+
+    margin-top: 10px;
+}

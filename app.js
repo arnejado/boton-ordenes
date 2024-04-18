@@ -4,11 +4,13 @@ const borrar = document.querySelector(".borrar");
 const editar = document.querySelector(".editar");
 const expandir = document.querySelector(".expandir");
 const formulario = document.querySelector(".formulario");
+// const cancelar = document.querySelector(".cancelarBoton");
 let botones = [];
 let vamosEditar = false;
 let vamosBorrar = false;
 
-console.log(listaBotones);
+console.log(cancelar);
+console.log(cancelar);
 
 document.addEventListener('DOMContentLoaded', ()=> {
     botones = JSON.parse ( localStorage.getItem('botones')) || []; // el   || []   lo ponemos para cuando devuelva null asigne un arreglo vacio, si no daría error
@@ -20,6 +22,7 @@ borrar.addEventListener("click", mostrarBorrar);
 formulario.addEventListener('submit', agregarBoton);
 editar.addEventListener("click", mostarEditar);
 expandir.addEventListener("click", mostrarBotones);
+cancelar.addEventListener("click", cancelar);
 
 // Funciones
 
@@ -156,6 +159,8 @@ function limpiarHTML() {
         while (listaBotones.firstChild) 
             listaBotones.removeChild(listaBotones.firstChild);
 }
+
+
 
 
 function borrarBoton (idBoton) {
