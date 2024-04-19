@@ -205,8 +205,6 @@ function mostrarBotones () {
         vamosBorrar = false;
         crearHTML();
     }
-
-
 }
 
 function mostrarAgregar () {
@@ -215,7 +213,6 @@ function mostrarAgregar () {
     crearHTML();
     espacioFormulario.classList.toggle("active");
     listaBotones.classList.toggle("active");
-
 }
 
 function mostrarBorrar () {
