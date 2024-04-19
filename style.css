@@ -26,12 +26,18 @@ label {
 }
 
 .formulario {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+}
+
+.espacioFormulario {
     display: none;
     flex-direction: column;
     max-width: 700px;
 }
 
-.formulario.active {
+.espacioFormulario.active {
     display: flex;
     justify-content: flex-end;
     margin: 25px 25px;
@@ -186,7 +192,31 @@ textarea{
   }
 
 
-  .confirmarBoton, .cancelar {
-
+  .confirmarBoton, .cancelarBoton {
+    touch-action: manipulation;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    touch-action: manipulation;
+    font-weight: 600;
+    color: #382b22;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: #fff0f0;
+    border: 2px solid #b18597;
+    border-radius: 0.75em;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
     margin-top: 10px;
-}
+  }
+
+  .botonFormulario:hover {
+    background: #ffe9e9;
+    transform: translate(0, 0.25em);
+  }

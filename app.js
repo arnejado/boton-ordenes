@@ -4,10 +4,12 @@ const borrar = document.querySelector(".borrar");
 const editar = document.querySelector(".editar");
 const expandir = document.querySelector(".expandir");
 const formulario = document.querySelector(".formulario");
-// const cancelar = document.querySelector(".cancelarBoton");
+const espacioFormulario = document.querySelector(".espacioFormulario");
+const cancelar = document.querySelector(".cancelarBoton");
 let botones = [];
 let vamosEditar = false;
 let vamosBorrar = false;
+
 
 document.addEventListener('DOMContentLoaded', ()=> {
     botones = JSON.parse ( localStorage.getItem('botones')) || []; // el   || []   lo ponemos para cuando devuelva null asigne un arreglo vacio, si no daría error
@@ -19,7 +21,7 @@ borrar.addEventListener("click", mostrarBorrar);
 formulario.addEventListener('submit', agregarBoton);
 editar.addEventListener("click", mostarEditar);
 expandir.addEventListener("click", mostrarBotones);
-// cancelar.addEventListener("click", cancelar);
+cancelar.addEventListener("click", cancelarFormulario);
 
 // Funciones
 
@@ -44,7 +46,7 @@ function agregarBoton(e) {
     botones = [...botones, botonObj];
 
     //Una vez agregado vamos a cear el HTML
-    formulario.classList.toggle("active");
+    espacioFormulario.classList.toggle("active");
     listaBotones.classList.toggle("active");
     vamosEditar = false;
     vamosBorrar = false;
@@ -208,9 +210,11 @@ function mostrarBotones () {
 }
 
 function mostrarAgregar () {
-    formulario.classList.toggle("active");
+    vamosEditar = false;
+    vamosBorrar = false;
+    crearHTML();
+    espacioFormulario.classList.toggle("active");
     listaBotones.classList.toggle("active");
-    console.log(formulario);
 
 }
 
@@ -224,4 +228,14 @@ function mostarEditar () {
     vamosBorrar = false;
     vamosEditar = !vamosEditar;
     crearHTML ();
+}
+
+function cancelarFormulario () {
+    espacioFormulario.classList.toggle("active");
+    listaBotones.classList.toggle("active");
+    if (!expandir.classList.contains('active')) {
+        vamosEditar = false;
+        vamosBorrar = false;
+        crearHTML();
+    }
 }
