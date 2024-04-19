@@ -84,17 +84,17 @@ textarea{
 }
 
 .botonMas.active {
-    transform: translatex(-90px);
+    transform: translatey(-90px);
     transition: transform 0.4s;
 }
 
 .borrar.active {
-    transform: translatex(-180px);
+    transform: translatey(-180px);
     transition: transform 0.4s;
 }
 
 .editar.active {
-    transform: translatex(-270px);
+    transform: translatey(-270px);
     transition: transform 0.4s;
 }
 
