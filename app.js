@@ -9,9 +9,6 @@ let botones = [];
 let vamosEditar = false;
 let vamosBorrar = false;
 
-console.log(cancelar);
-console.log(cancelar);
-
 document.addEventListener('DOMContentLoaded', ()=> {
     botones = JSON.parse ( localStorage.getItem('botones')) || []; // el   || []   lo ponemos para cuando devuelva null asigne un arreglo vacio, si no daría error
     crearHTML ();
@@ -22,7 +19,7 @@ borrar.addEventListener("click", mostrarBorrar);
 formulario.addEventListener('submit', agregarBoton);
 editar.addEventListener("click", mostarEditar);
 expandir.addEventListener("click", mostrarBotones);
-cancelar.addEventListener("click", cancelar);
+// cancelar.addEventListener("click", cancelar);
 
 // Funciones
 
