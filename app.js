@@ -5,11 +5,12 @@ const editar = document.querySelector(".editar");
 const expandir = document.querySelector(".expandir");
 const formulario = document.querySelector(".formulario");
 const espacioFormulario = document.querySelector(".espacioFormulario");
+const textAreaNuevoBoton = document.querySelector(".nuevoBoton");
 const cancelar = document.querySelector(".cancelarBoton");
 let botones = [];
 let vamosEditar = false;
 let vamosBorrar = false;
-
+let editando = false;
 
 document.addEventListener('DOMContentLoaded', ()=> {
     botones = JSON.parse ( localStorage.getItem('botones')) || []; // el   || []   lo ponemos para cuando devuelva null asigne un arreglo vacio, si no daría error
@@ -37,21 +38,30 @@ function agregarBoton(e) {
         return; // evita que se ejecuten más lineas de codigo (funciona en un if dentro de una función)
     }
 
-    const botonObj = {
-        id: Date.now(),
-        boton : botonNuevo   
+
+    if (editando === true) {
+        console.log("editando");
+        console.log(clon.boton);
+        clon.boton = botonNuevo;
+            
+
+    } else {
+        const botonObj = {
+            id: Date.now(),
+            boton : botonNuevo   
+        }
+        //Añadir al arreglo de botones
+
+        botones = [...botones, botonObj];
     }
-    //Añadir al arreglo de tweets
 
-    botones = [...botones, botonObj];
-
-    //Una vez agregado vamos a cear el HTML
-    espacioFormulario.classList.toggle("active");
-    listaBotones.classList.toggle("active");
-    vamosEditar = false;
-    vamosBorrar = false;
-    crearHTML ()
-
+        //Una vez agregado vamos a cear el HTML
+        espacioFormulario.classList.toggle("active");
+        listaBotones.classList.toggle("active");
+        vamosEditar = false;
+        vamosBorrar = false;
+        crearHTML ()
+    
     //reiniciar el formulario
 
 }
@@ -97,8 +107,9 @@ function crearHTML () {
                 btnEditar.innerText = "📝";
 
                 //Añadimos la función de editar
+                const clone = structuredClone(boton)
                 btnEditar.onclick = () => {
-                editarBoton(boton.id)
+                editarBoton(clone)
                 }
 
                 li.appendChild(btnEditar);            
@@ -159,29 +170,19 @@ function limpiarHTML() {
             listaBotones.removeChild(listaBotones.firstChild);
 }
 
-
-
-
 function borrarBoton (idBoton) {
     botones = botones.filter (boton => boton.id !== idBoton);
     crearHTML();
 }
 
-function editarBoton(idboton) {
-    console.log("editando...");
-    const botonEncontrado = botones.filter((objeto) => {
-        return objeto.id === idboton;
-      });
-      
-      console.log(botonEncontrado);
-      console.log(botonEncontrado.boton);
-
-
-      formulario.classList.toggle("active");
-      listaBotones.classList.toggle("active");
-      const botonNuevo = document.querySelector('.nuevoBoton').value;
-      console.log(botonNuevo);
-      botonNuevo.innerText = botonEncontrado.boton;
+function editarBoton(clon) {
+    
+    console.log(clon.boton);
+    espacioFormulario.classList.toggle("active");
+    listaBotones.classList.toggle("active");
+    textAreaNuevoBoton.innerText = clon.boton;
+    editando = true;
+    console.log(clon);
 }
 
 function reproduce(fraseReproducir) {
